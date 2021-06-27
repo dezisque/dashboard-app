@@ -1,0 +1,41 @@
+@import "../../../../../assets/styles/colors";
+.modal-content {
+  width: 50vw;
+  .modal-header {
+    h1{
+      text-align: center;
+    }
+  }
+  .modal-body {
+    .todo-list {
+      .item {
+        display: flex;
+        align-items: center;
+        height: 30px;
+        margin: 5px;
+        border-bottom: 1px solid $lite-gray;
+        &:nth-last-child(1) {
+          border: none;
+        }
+      }
+    }
+    .add-new-todo {
+      text-align: center;
+      cursor: pointer;
+    }
+    .buttons {
+      display: flex;
+      justify-content: flex-end;
+      .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        min-width: 100px;
+        margin: 0 5px;
+        height: 32px;
+        border: 1px solid $lite-gray;
+      }
+    }
+  }
+}

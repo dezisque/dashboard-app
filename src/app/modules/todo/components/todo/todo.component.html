@@ -1,0 +1,15 @@
+<div class="todo wrapper">
+  <h1 class="title">Todos</h1>
+  <div class="content">
+    <div
+      class="todo-card"
+      *ngFor="let item of items | async"
+      (click)="openDetailView(item)"
+    >
+      <div class="todo-title">{{ item.title }}</div>
+    </div>
+    <div class="todo-card add-new" *ngIf="items | async">
+      <div class="todo-title">+</div>
+    </div>
+  </div>
+</div>

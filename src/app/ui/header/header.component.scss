@@ -3,7 +3,6 @@
 .header {
   height: 40px;
   width: 100%;
-  background-color: $lite-gray;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -14,8 +13,7 @@
     padding: 0 10px;
     cursor: pointer;
     &:hover {
-      background-color: $blue;
-      color: #FFFFFF;
+      color: $blue
     }
   }
 }

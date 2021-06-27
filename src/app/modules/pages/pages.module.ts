@@ -6,9 +6,15 @@ import { SideMenuComponent } from '../../ui/side-menu/side-menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from '../../ui/header/header.component';
+import { LoaderComponent } from '../../ui/loader/loader.component';
 
 @NgModule({
-  declarations: [PagesComponent, SideMenuComponent, HeaderComponent],
+  declarations: [
+    PagesComponent,
+    SideMenuComponent,
+    HeaderComponent,
+    LoaderComponent,
+  ],
   imports: [CommonModule, PagesRoutingModule, FontAwesomeModule, RouterModule],
 })
 export class PagesModule {}

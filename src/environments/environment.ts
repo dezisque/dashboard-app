@@ -6,9 +6,9 @@ export const environment = {
   production: false,
   firebase: {
     apiKey: 'AIzaSyD2HEbuzrSpRRqa0nKzj118a4MkqL-g5Vo',
-    authDomain: 'pages-app-40864.firebaseapp.com',
-    projectId: 'pages-app-40864',
-    storageBucket: 'pages-app-40864.appspot.com',
+    authDomain: 'dashboard-app-40864.firebaseapp.com',
+    projectId: 'dashboard-app-40864',
+    storageBucket: 'dashboard-app-40864.appspot.com',
     messagingSenderId: '1036044287140',
     appId: '1:1036044287140:web:7cb7ad0221fa376987ba31',
     measurementId: 'G-QRRXDNJ0DS',

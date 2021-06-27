@@ -17,7 +17,5 @@ export class InformationModalComponent
     super();
   }
 
-  ngOnInit(): void {
-    console.log('app-information-modal init');
-  }
+  ngOnInit(): void {}
 }

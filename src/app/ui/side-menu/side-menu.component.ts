@@ -4,6 +4,7 @@ import {
   faUser,
   faTachometerAlt,
   faCalendarAlt,
+  faListUl,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -12,7 +13,7 @@ import {
   styleUrls: ['./side-menu.component.scss'],
 })
 export class SideMenuComponent implements OnInit {
-  public icons = { faBars, faUser, faTachometerAlt, faCalendarAlt };
+  public icons = { faBars, faUser, faTachometerAlt, faCalendarAlt, faListUl };
   public opened = false;
   constructor() {}
 
