@@ -1,13 +1,13 @@
 <div class="login-wrapper">
   <h1>Login</h1>
-  <div class="form">
+  <form class="form" [formGroup]="loginForm" (ngSubmit)="login()">
     <div class="email">
       <input
         id="login"
         type="text"
         placeholder="Email"
         (focus)="resetErrors()"
-        [(ngModel)]="email"
+        formControlName="email"
         required
       />
       <label for="login">Login</label>
@@ -15,10 +15,10 @@
     <div class="password">
       <input
         id="password"
-        type="text"
+        type="password"
         placeholder="Password"
         (focus)="resetErrors()"
-        [(ngModel)]="password"
+        formControlName="password"
         required
       />
       <label for="password">Password</label>
@@ -29,8 +29,8 @@
       </ul>
     </div>
     <div class="buttons">
-      <button class="login" (click)="login()">Login</button>
+      <button class="login">Login</button>
       <button class="register" [routerLink]="['/register']">Signup</button>
     </div>
-  </div>
+  </form>
 </div>

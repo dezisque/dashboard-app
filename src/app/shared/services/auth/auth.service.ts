@@ -13,10 +13,8 @@ export class AuthService {
     return from(this.auth.signInWithEmailAndPassword(email, password));
   }
 
-  public logout() {
-    this.auth.signOut().then(res => {
-      console.log('logout response: ', res);
-    });
+  public logout(): Observable<any> {
+    return from(this.auth.signOut());
   }
 
   public register(user: User): Observable<any> {

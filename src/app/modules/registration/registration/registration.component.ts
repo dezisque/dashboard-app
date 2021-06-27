@@ -32,11 +32,8 @@ export class RegistrationComponent implements OnInit {
     });
   }
 
-  public resetErrors(): void {
+  public register(): void {
     this.registerErrors.length = 0;
-  }
-
-  register() {
     const form = this.registerForm.value;
     if (form.password !== form.passwordConfirm) {
       this.registerErrors.push("Passwords doesn't match!");
@@ -71,5 +68,8 @@ export class RegistrationComponent implements OnInit {
           console.log('error login', err);
         },
       );
+  }
+  public resetErrors(): void {
+    this.registerErrors.length = 0;
   }
 }

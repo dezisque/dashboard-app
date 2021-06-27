@@ -20,8 +20,6 @@ import { InformationModalComponent } from '../../ui/modals/information-modal/inf
   ],
   imports: [
     CommonModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
     AuthRoutingModule,
     FormsModule,
     RouterModule,

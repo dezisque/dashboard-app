@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../shared/services/auth/auth.service';
+import { Router } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,17 +9,30 @@ import { AuthService } from '../../../shared/services/auth/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private auth: AuthService) {}
+  public loginForm: FormGroup = new FormGroup({});
   public email: string = '';
   public password: string = '';
   public loginErrors: string[] = [];
+  constructor(
+    private router: Router,
+    private auth: AuthService,
+    private formBuilder: FormBuilder,
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loginForm = this.formBuilder.group({
+      email: [''],
+      password: [''],
+    });
+  }
 
   public login(): void {
-    this.auth.login(this.email, this.password).subscribe(
-      res => {
-        console.log(res);
+    console.log('login');
+    this.loginErrors.length = 0;
+    const form = this.loginForm.value;
+    this.auth.login(form.email, form.password).subscribe(
+      () => {
+        this.router.navigate(['dashboard']);
       },
       error => {
         this.loginErrors.push(error.message);
