@@ -17,7 +17,7 @@ describe('AppComponent', () => {
   it(`should have as title 'dashboard-app'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('dashboard-app');
+    expect(app.title).toEqual('pages-app');
   });
 
   it('should render title', () => {
@@ -25,7 +25,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain(
-      'dashboard-app app is running!',
+      'pages-app app is running!',
     );
   });
 });

@@ -1,0 +1,38 @@
+@import '../../../assets/styles/colors';
+
+.side-menu {
+  position: fixed;
+  height: 100vh;
+  width: 50px;
+  transition: .5s width;
+  background-color: $lite-gray;
+  overflow-x: hidden;
+  &.opened {
+    width: 250px;
+  }
+  .list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    .item {
+      padding-left: 18px;
+      display: flex;
+      align-items: center;
+      height: 50px;
+      width: 100%;
+      cursor: pointer;
+      .text {
+        padding-left: 25px;
+        font-size: 1.2rem;
+      }
+      &:hover {
+        background-color:$blue;
+        color: #FFFFFF;
+      }
+      &.spacer {
+        cursor: inherit;
+        background: none;
+      }
+    }
+  }
+}

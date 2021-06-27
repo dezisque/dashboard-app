@@ -1,0 +1,16 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  .side-menu {
+    width: 50px;
+  }
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .content {
+      padding: 16px;
+    }
+  }
+}
+

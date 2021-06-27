@@ -3,14 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import {
   AngularFireAuthGuard,
-  canActivate,
   redirectLoggedInTo,
   redirectUnauthorizedTo,
 } from '@angular/fire/auth-guard';
-import { DashboardComponent } from './modules/dashboard/components/dashboard/dashboard.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
-const redirectLoggedInToHome = () => redirectLoggedInTo(['dashboard']);
+const redirectLoggedInToHome = () => redirectLoggedInTo(['pages']);
 
 const routes: Routes = [
   {
@@ -21,11 +19,9 @@ const routes: Routes = [
     data: { authGuardPipe: redirectLoggedInToHome },
   },
   {
-    path: 'dashboard',
+    path: 'pages',
     loadChildren: () =>
-      import('./modules/dashboard/dashboard.module').then(
-        m => m.DashboardModule,
-      ),
+      import('./modules/pages/pages.module').then(m => m.PagesModule),
     canActivate: [AngularFireAuthGuard],
     data: { authGuardPipe: redirectUnauthorizedToLogin },
   },

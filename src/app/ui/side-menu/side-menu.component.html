@@ -1,0 +1,26 @@
+<div class="side-menu wrapper" [class.opened]="opened">
+  <div class="list">
+    <div class="item burger" (click)="opened = !opened">
+      <fa-icon [icon]="icons.faBars"></fa-icon>
+    </div>
+    <div class="item spacer"></div>
+    <div class="item user" [routerLink]="['user']">
+      <div class="icon">
+        <fa-icon [icon]="icons.faUser"></fa-icon>
+      </div>
+      <div class="text">User</div>
+    </div>
+    <div class="item deshboard" [routerLink]="['dashboard']">
+      <div class="icon">
+        <fa-icon [icon]="icons.faTachometerAlt"></fa-icon>
+      </div>
+      <div class="text">Dashboard</div>
+    </div>
+    <div class="item calendar" [routerLink]="['calendar']">
+      <div class="icon">
+        <fa-icon [icon]="icons.faCalendarAlt"></fa-icon>
+      </div>
+      <div class="text">Calendar</div>
+    </div>
+  </div>
+</div>
