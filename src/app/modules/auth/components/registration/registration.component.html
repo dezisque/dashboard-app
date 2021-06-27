@@ -1,5 +1,8 @@
 <div class="login-wrapper">
-  <h1>Registration</h1>
+  <div class="header">
+    <fa-icon [icon]="faChevronCircleLeft" (click)="back()"></fa-icon>
+    <h1>Registration</h1>
+  </div>
   <form class="form" [formGroup]="registerForm" (ngSubmit)="register()">
     <div class="wrapper">
       <div class="firstName">

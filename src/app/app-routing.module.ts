@@ -7,7 +7,7 @@ import {
   redirectLoggedInTo,
   redirectUnauthorizedTo,
 } from '@angular/fire/auth-guard';
-import { DashboardComponent } from './modules/dashboard/dashboard/dashboard.component';
+import { DashboardComponent } from './modules/dashboard/components/dashboard/dashboard.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectLoggedInToHome = () => redirectLoggedInTo(['dashboard']);

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../../shared/services/auth/auth.service';
+import { AuthService } from '../../../../shared/services/auth/auth.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { SimpleModalService } from 'ngx-simple-modal';
-import { InformationModalComponent } from '../../../ui/modals/information-modal/information-modal.component';
+import { InformationModalComponent } from '../../../../ui/modals/information-modal/information-modal.component';
 import { Router } from '@angular/router';
+import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-registration',
@@ -13,6 +14,7 @@ import { Router } from '@angular/router';
 export class RegistrationComponent implements OnInit {
   public registerForm: FormGroup = new FormGroup({});
   public registerErrors: string[] = [];
+  public faChevronCircleLeft = faChevronCircleLeft;
 
   constructor(
     private authService: AuthService,
@@ -45,6 +47,7 @@ export class RegistrationComponent implements OnInit {
       })
       .subscribe(
         res => {
+          // update profile with additional info
           res.user.updateProfile({
             displayName: `${form.firstName} ${form.lastName}`,
           });
@@ -63,11 +66,14 @@ export class RegistrationComponent implements OnInit {
         },
         err => {
           this.registerErrors.push(err.message);
-          console.log('error login', err);
         },
       );
   }
   public resetErrors(): void {
     this.registerErrors.length = 0;
+  }
+
+  public back(): void {
+    this.router.navigate(['..']).then();
   }
 }

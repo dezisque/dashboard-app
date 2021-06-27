@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from '../login/login/login.component';
-import { RegistrationComponent } from '../registration/registration/registration.component';
-import { AngularFireModule } from '@angular/fire';
-import { environment } from '../../../environments/environment';
+import { LoginComponent } from './components/login/login.component';
+import { RegistrationComponent } from './components/registration/registration.component';
 import { AuthRoutingModule } from './auth-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AuthService } from '../../shared/services/auth/auth.service';
 import { SimpleModalModule } from 'ngx-simple-modal';
 import { InformationModalComponent } from '../../ui/modals/information-modal/information-modal.component';
+import { FontawesomeModule } from '../../shared/modules/shared/fontawesome.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +23,7 @@ import { InformationModalComponent } from '../../ui/modals/information-modal/inf
     RouterModule,
     ReactiveFormsModule,
     SimpleModalModule,
+    FontawesomeModule,
   ],
   providers: [AuthService],
   entryComponents: [InformationModalComponent],

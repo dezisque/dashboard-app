@@ -1,4 +1,4 @@
-@import 'src/assets/styles/colors';
+@import '../../../../../assets/styles/colors';
 
 .login-wrapper {
   height: 100vh;
@@ -7,6 +7,14 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  .header {
+    display: flex;
+    align-items: center;
+    fa-icon {
+      padding-right: 10px;
+      cursor: pointer;
+    }
+  }
   .form {
     max-width: 400px;
     width: 100%;
