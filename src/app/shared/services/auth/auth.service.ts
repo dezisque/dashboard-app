@@ -25,4 +25,8 @@ export class AuthService {
       ),
     );
   }
+
+  public getUser(): Observable<any> {
+    return from(this.auth.authState);
+  }
 }

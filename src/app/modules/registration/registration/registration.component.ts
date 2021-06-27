@@ -28,7 +28,6 @@ export class RegistrationComponent implements OnInit {
       email: [''],
       password: [''],
       passwordConfirm: [''],
-      phone: [''],
     });
   }
 
@@ -43,13 +42,12 @@ export class RegistrationComponent implements OnInit {
       .register({
         email: form.email,
         password: form.password,
-        displayName: `${form.firstName} ${form.lastName}`,
-        disabled: false,
-        phoneNumber: form.phone,
       })
       .subscribe(
         res => {
-          console.log('success login', res);
+          res.user.updateProfile({
+            displayName: `${form.firstName} ${form.lastName}`,
+          });
           const disposable = this.simpleModalService
             .addModal(InformationModalComponent, {
               title: 'Registration successful!',
