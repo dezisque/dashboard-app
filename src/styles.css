@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+/*   Modal global styles   */
+
+.modal-open .modal {
+  display: flex!important;
+  align-items: center!important;
+  justify-content: center;
+}
+
+.modal-dialog {
+  flex-grow: 1;
+}
+
+.modal-open .modal-content{
+  min-width: 300px!important;
+}

@@ -1,0 +1,36 @@
+<div class="login-wrapper">
+  <h1>Login</h1>
+  <div class="form">
+    <div class="email">
+      <input
+        id="login"
+        type="text"
+        placeholder="Email"
+        (focus)="resetErrors()"
+        [(ngModel)]="email"
+        required
+      />
+      <label for="login">Login</label>
+    </div>
+    <div class="password">
+      <input
+        id="password"
+        type="text"
+        placeholder="Password"
+        (focus)="resetErrors()"
+        [(ngModel)]="password"
+        required
+      />
+      <label for="password">Password</label>
+    </div>
+    <div class="errors" *ngIf="loginErrors.length">
+      <ul class="list">
+        <li class="item" *ngFor="let error of loginErrors">{{ error }}</li>
+      </ul>
+    </div>
+    <div class="buttons">
+      <button class="login" (click)="login()">Login</button>
+      <button class="register" [routerLink]="['/register']">Signup</button>
+    </div>
+  </div>
+</div>

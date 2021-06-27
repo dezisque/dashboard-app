@@ -1,0 +1,83 @@
+<div class="login-wrapper">
+  <h1>Registration</h1>
+  <form class="form" [formGroup]="registerForm" (ngSubmit)="register()">
+    <div class="wrapper">
+      <div class="firstName">
+        <input
+          id="firstName"
+          type="text"
+          placeholder="First name"
+          (focus)="resetErrors()"
+          formControlName="firstName"
+          required
+        />
+        <label for="firstName">First name</label>
+      </div>
+      <div class="lastName">
+        <input
+          id="lastName"
+          type="text"
+          placeholder="Last name"
+          (focus)="resetErrors()"
+          formControlName="lastName"
+          required
+        />
+        <label for="lastName">Last name</label>
+      </div>
+    </div>
+    <div class="email">
+      <input
+        id="login"
+        type="text"
+        placeholder="Email"
+        (focus)="resetErrors()"
+        formControlName="email"
+        required
+      />
+      <label for="login">Email</label>
+    </div>
+    <div class="phone">
+      <input
+        id="phone"
+        type="text"
+        placeholder="Phone number"
+        (focus)="resetErrors()"
+        formControlName="phone"
+        required
+      />
+      <label for="phone">Phone number</label>
+    </div>
+    <div class="wrapper">
+      <div class="password">
+        <input
+          id="password"
+          type="password"
+          placeholder="Password"
+          (focus)="resetErrors()"
+          formControlName="password"
+          required
+        />
+        <label for="password">Password</label>
+      </div>
+      <div class="password-confirm">
+        <input
+          id="password-confirm"
+          type="password"
+          placeholder="Confirm password"
+          formControlName="passwordConfirm"
+          (focus)="resetErrors()"
+        />
+        <label for="password-confirm">Confirm password</label>
+      </div>
+    </div>
+
+    <div class="errors" *ngIf="registerErrors.length">
+      <ul class="list">
+        <li class="item" *ngFor="let error of registerErrors">{{ error }}</li>
+      </ul>
+    </div>
+    <div class="buttons">
+      <button class="register">Register</button>
+    </div>
+  </form>
+</div>
